@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venipuncture Images</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
+            font-size: 2em;
+            margin: 20px 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ff7e5f;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #333;
+            border: 2px solid #ff7e5f;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            max-width: 300px;
+            overflow: hidden;
+            text-align: left;
+            width: 100%;
+        }
+
+        .card img {
+            border-bottom: 2px solid #ff7e5f;
+            display: block;
+            width: 100%;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h2 {
+            font-size: 1.5em;
+            margin: 0;
+            color: #ff7e5f;
+            /* Keeping the heading color as is */
+        }
+
+        .card-content p {
+            color: #bbb;
+            font-size: 0.9em;
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">VDS-1.0</div>
+    <div class="container">
+        {% for image in images %}
+        <div class="card">
+            <img src="{{ url_for('image', filename=image) }}" alt="{{ image }}">
+            <div class="card-content">
+                <h2>{{ image }}</h2>
+                <p>Time taken: {{ time_taken }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

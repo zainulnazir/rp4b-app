@@ -1,0 +1,6 @@
+venipuncture_app/
+├── app.py
+├── templates/
+│   └── index.html
+└── static/
+    └── images/
