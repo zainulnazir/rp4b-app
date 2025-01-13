@@ -78,6 +78,8 @@ You can also access the image data via the API:
 http://<raspberry_pi_ip>:5001/api/images
 ```
 
+---
+
 ## Running on Boot (Optional)
 
 To run the app automatically when the Raspberry Pi boots up, you can create a systemd service.
@@ -133,6 +135,8 @@ Check the status of the service:
 ```bash
 sudo systemctl status rp4b-app.service
 ```
+
+---
 
 ## Troubleshooting
 
