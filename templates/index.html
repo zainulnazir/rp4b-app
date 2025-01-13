@@ -81,7 +81,7 @@
     <div class="container">
         {% for image in images %}
         <div class="card">
-            <img src="{{ url_for('image', filename=image) }}" alt="{{ image }}">
+            <img src="{{ url_for('get_image', filename=image) }}" alt="{{ image }}">
             <div class="card-content">
                 <h2>{{ image }}</h2>
                 <p>Time taken: {{ time_taken }}</p>

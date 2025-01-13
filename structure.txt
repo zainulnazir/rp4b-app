@@ -1,5 +1,6 @@
-venipuncture_app/
+app/
 ├── app.py
+├── requirements.txt
 ├── templates/
 │   └── index.html
 └── static/
