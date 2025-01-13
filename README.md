@@ -1,4 +1,4 @@
-# Vein Detector System - Flask App
+# Vein Detector System
 
 This Flask app is designed to display processed images from a Vein Detector System based on the IR spectrum. It is optimized to run on a **Raspberry Pi 4B** with **Raspberry Pi OS**.
 
@@ -15,7 +15,9 @@ This Flask app is designed to display processed images from a Vein Detector Syst
 ## Setup Instructions
 
 ### 1. Install Git
+
 Git is not pre-installed on Raspberry Pi OS. To install it, run:
+
 ```bash
 sudo apt update
 sudo apt install git
@@ -93,15 +95,16 @@ sudo nano /etc/systemd/system/rp4b-app.service
 ```
 
 Add the following content:
+
 ```bash
 [Unit]
-Description=Vein Detector Flask App
+Description=Vein Detector
 After=network.target
 
 [Service]
 User=pi
-WorkingDirectory=/home/pi/your-repo-name
-ExecStart=/usr/bin/python3 /home/pi/your-repo-name/app.py
+WorkingDirectory=/home/pi/rp4b-app
+ExecStart=/usr/bin/python3 /home/pi/rp4b-app/app.py
 Restart=always
 
 [Install]
@@ -166,4 +169,3 @@ If you encounter missing dependencies, install them using apt:
 ```bash
 sudo apt install python3-venv
 ```
-
